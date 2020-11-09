@@ -4,4 +4,21 @@
   <artifactId>PilotProject</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <description>		</description>
+  <dependencies> 
+  		<!-- Below is the selenium version -->
+			  <dependency>
+			    <groupId>org.seleniumhq.selenium</groupId>
+			    <artifactId>selenium-java</artifactId>
+			    <version>4.0.0-alpha-5</version>
+			 </dependency>
+		 <!-- Below is the testng version -->
+			 <dependency>
+			  <groupId>org.testng</groupId>
+			  <artifactId>testng</artifactId>
+			  <version>6.8</version>
+			  <scope>test</scope>
+			</dependency>
+			
+  </dependencies>
+  
 </project>
