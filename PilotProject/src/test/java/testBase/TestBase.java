@@ -1,5 +1,6 @@
 package testBase;
 
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -17,6 +18,12 @@ public class TestBase
 	{
 		rep = ExtentManager.getReports();
 		test = rep.createTest("");
+	}
+	
+	@AfterMethod
+	public void quit()
+	{
+		rep.flush();
 	}
 
 }
