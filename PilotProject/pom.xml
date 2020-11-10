@@ -4,21 +4,79 @@
   <artifactId>PilotProject</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <description>		</description>
-  <dependencies> 
+	 <dependencies> 
+	 
+					 <dependency>
+						    <groupId>com.aventstack</groupId>
+						    <artifactId>extentreports</artifactId>
+						    <version>4.1.5</version>
+					 </dependency> 
+  
   		<!-- Below is the selenium version -->
-			  <dependency>
-			    <groupId>org.seleniumhq.selenium</groupId>
-			    <artifactId>selenium-java</artifactId>
-			    <version>4.0.0-alpha-5</version>
-			 </dependency>
+					  <dependency>
+					    <groupId>org.seleniumhq.selenium</groupId>
+					    <artifactId>selenium-java</artifactId>
+					    <version>4.0.0-alpha-5</version>
+					 </dependency>
+					 
 		 <!-- Below is the testng version -->
-			 <dependency>
-			  <groupId>org.testng</groupId>
-			  <artifactId>testng</artifactId>
-			  <version>6.8</version>
-			  <scope>test</scope>
-			</dependency>
+					<dependency>
+					   <groupId>org.testng</groupId>
+						<artifactId>testng</artifactId>
+						<version>7.0.0</version>
+						<scope>test</scope>
+				 </dependency>
+				 
+				  <dependency>
+				            <groupId>com.sun.mail</groupId>
+				            <artifactId>javax.mail</artifactId>
+				            <version>1.6.2</version>
+				    </dependency>
+				    
+				    <dependency>
+						    <groupId>commons-io</groupId>
+						    <artifactId>commons-io</artifactId>
+						    <version>2.6</version>
+					</dependency>
 			
-  </dependencies>
+  	</dependencies>
+  
+		  <build>
+				<plugins>
+					<!-- Compiler plug-in -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<configuration>
+							<source>1.8</source>
+							<target>1.8</target>
+						</configuration>
+					</plugin>
+					<!-- Below plug-in is used to execute tests -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						        <version>3.0.0-M4</version>
+						<configuration>
+							<suiteXmlFiles>
+							 	<suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+								
+								<!-- TestNG suite XML files 
+								<suiteXmlFile>src/test/resources/suiteA.xml</suiteXmlFile>
+								<suiteXmlFile>src/test/resources/suiteB.xml</suiteXmlFile>
+								<suiteXmlFile>src/test/resources/suiteC.xml</suiteXmlFile
+								<suiteXmlFile>target/surefire-reports/testng-failed.xml</suiteXmlFile-->
+							</suiteXmlFiles>
+							<properties>
+					            <property>
+					                <name>suitethreadpoolsize</name>
+					                <value>1</value>
+					            </property>
+		        			</properties>
+						</configuration>
+					</plugin>
+				
+				</plugins>
+			</build>
   
 </project>
